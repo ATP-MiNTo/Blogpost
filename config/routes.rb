@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   get "home/index"
+
+  get 'home/authen', to: 'home#authen', as: 'home_authen'
+
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
