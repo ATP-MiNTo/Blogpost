@@ -4,5 +4,4 @@ class Post < ApplicationRecord
     def increment_likes!
       update!(likes: likes + 1)
     end
-  end
-  
+end

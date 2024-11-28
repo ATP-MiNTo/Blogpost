@@ -5,5 +5,5 @@ class HomeController < ApplicationController
 
   def authen
     @posts = Post.all
-  end 
+  end
 end

@@ -13,8 +13,8 @@ class PostsController < ApplicationController
       format.html
     end
   end
-  
-  
+
+
   def new
     @post = Post.new
   end
@@ -40,7 +40,7 @@ class PostsController < ApplicationController
       end
     end
   end
-  
+
 
   def update
     if @post.update(post_params)
@@ -57,7 +57,7 @@ class PostsController < ApplicationController
       end
     end
   end
-  
+
 
   def like
     if @post
@@ -84,8 +84,8 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
-  
+
+
 
   private
     def set_post

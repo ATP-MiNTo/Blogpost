@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
   resources :comments
   resources :posts do
-    resources :comments, only: [:create]
+    resources :comments, only: [ :create ]
     member do
       post :like
     end
   end
-  
+
   get "home/index"
 
-  get 'home/authen', to: 'home#authen', as: 'home_authen'
+  get "home/authen", to: "home#authen", as: "home_authen"
 
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
