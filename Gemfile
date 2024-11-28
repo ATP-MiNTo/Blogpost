@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
 gem 'devise'
+gem 'pg'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.2.2"
