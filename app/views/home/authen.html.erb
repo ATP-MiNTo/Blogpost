@@ -1,6 +1,5 @@
 <h1>Welcome to the Authenticated Page!</h1>
 <p>You have successfully logged in.</p>
-
 <h1>Posts</h1>
 
 <turbo-frame id="posts">
@@ -8,3 +7,4 @@
 </turbo-frame>
 
 <%= link_to 'Create a New Post', new_post_path, class: 'btn btn-primary' %>
+<%= link_to "Back to Home", home_authen_path, class: "btn btn-secondary" %>

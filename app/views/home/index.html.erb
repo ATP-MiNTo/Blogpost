@@ -1,5 +1,11 @@
 # index for non-login
 <h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<p><h1>Posts</h1>
 
-<%= link_to 'Login', new_user_session_path, class: 'loginbutton' %>
+<turbo-frame id="posts">
+  <%= render @posts %> <!-- This will render each post using the partial _post.html.erb -->
+</turbo-frame>
+
+<p>Sign in to create or interact with posts.</p>
+<%= link_to "Log in", new_user_session_path, class: "btn btn-primary" %>
+<%= link_to "Back to Home", root_path, class: "btn btn-secondary" %>

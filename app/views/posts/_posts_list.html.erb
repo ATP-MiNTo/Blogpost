@@ -1,8 +1,6 @@
-<% posts.each do |post| %>
-    <div id="post_<%= post.id %>">
-      <h2><%= link_to post.title, post_path(post) %></h2>
-      <p><%= post.body %></p>
-      <small>Comments: <%= post.comments.count %></small>
-    </div>
-<% end %>
-  
+<turbo-frame id="posts">
+  <% @posts.each do |post| %>
+    <!-- Render post using partial -->
+    <%= render partial: 'posts/post', locals: { post: post } %>
+  <% end %>
+</turbo-frame>

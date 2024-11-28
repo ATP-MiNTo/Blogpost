@@ -1,5 +1,16 @@
-<div id="post_<%= post.id %>">
-  <h2><%= link_to post.title, post_path(post) %></h2>
-  <p><%= post.body %></p>
-  <small>Comments: <%= post.comments.count %></small>
-</div>
+<turbo-frame id="post_<%= post.id %>">
+  <div id="post_<%= post.id %>">
+    <h2><%= link_to post.title, post, data: { turbo_frame: "_top" }%></h2>
+    <p>Detail: <%= post.body %></p>
+    <small>Comments: <%= post.comments.count %></small>
+
+    <% if controller_name == "home" && action_name == "authen" %>
+      <!-- Only show these actions on the authen page -->
+      <p>
+        <%= link_to "Show this post", post, data: { turbo_frame: "_top" } %> <!-- Ensures it goes to the full page -->
+        <%= link_to "Edit", edit_post_path(post), data: { turbo_frame: "_top" }, class: "btn btn-sm btn-warning" %> <!-- Forces page navigation -->
+        <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?", turbo_frame: "_top" }, class: "btn btn-sm btn-danger" %> <!-- Forces page navigation -->
+      </p>
+    <% end %>
+  </div>
+</turbo-frame>
