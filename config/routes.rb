@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   resources :comments
-  resources :posts
+  resources :posts do
+    resources :comments, only: [:create]
+    member do
+      post :like
+    end
+  end
+  
   get "home/index"
 
   get 'home/authen', to: 'home#authen', as: 'home_authen'

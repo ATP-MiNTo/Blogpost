@@ -1,12 +1,12 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[ show edit update destroy ]
+  before_action :set_post, only: %i[ show edit update destroy like]
 
-  # GET /posts or /posts.json
+
   def index
     @posts = Post.all
   end
 
-  # GET /posts/1 or /posts/1.json
+
   def show
     respond_to do |format|
       format.turbo_stream
@@ -15,17 +15,15 @@ class PostsController < ApplicationController
   end
   
   
-
-  # GET /posts/new
   def new
     @post = Post.new
   end
 
-  # GET /posts/1/edit
+
   def edit
   end
 
-  # POST /posts or /posts.json
+
   def create
     @post = Post.new(post_params)
     respond_to do |format|
@@ -43,9 +41,7 @@ class PostsController < ApplicationController
     end
   end
   
-  
 
-  # PATCH/PUT /posts/1 or /posts/1.json
   def update
     if @post.update(post_params)
       respond_to do |format|
@@ -62,10 +58,24 @@ class PostsController < ApplicationController
     end
   end
   
-  
-  
 
-  # DELETE /posts/1 or /posts/1.json
+  def like
+    if @post
+      @post.increment_likes!
+
+      respond_to do |format|
+        format.html { redirect_to @post, notice: "You liked this post!" }
+        format.json { render json: { likes: @post.likes }, status: :ok }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to posts_path, alert: "Post not found." }
+        format.json { render json: { error: "Post not found" }, status: :not_found }
+      end
+    end
+  end
+
+
   def destroy
     @post.destroy!
     respond_to do |format|
@@ -76,15 +86,12 @@ class PostsController < ApplicationController
   end
   
   
-  
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def post_params
       params.require(:post).permit(:title, :body)
     end

@@ -1,0 +1,4 @@
+<turbo-frame id="post_likes_<%= post.id %>">
+  <h3>Likes: <%= post.likes %></h3>
+  <%= button_to "Like", like_post_path(post), method: :post, class: "btn btn-success" %>
+</turbo-frame>
