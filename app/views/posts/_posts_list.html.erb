@@ -1,5 +1,8 @@
+<div class="container">
 <turbo-frame id="posts">
   <% @posts.each do |post| %>
     <%= render partial: 'posts/post', locals: { post: post } %>
   <% end %>
 </turbo-frame>
+
+</div>

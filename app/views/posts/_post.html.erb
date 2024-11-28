@@ -1,13 +1,17 @@
-<turbo-frame id="post_<%= post.id %>">
-  <div id="post_<%= post.id %>">
-  <% if controller_name == "home" && action_name == "index" %>
-    <h3>Title: <%= post.title%></h3>
-  <% end %>
-  
-  <% unless controller_name == "home" && action_name == "index" %>
-    <h3>Title: <%= link_to post.title, post, data: { turbo_frame: "_top" }%></h3>
-  <% end %>
-  <p>Detail: <%= post.body %></p>
-  <p>Comments: <%= post.comments.count %></p>
+<turbo-frame class="container" id="post_<%= post.id %>">
+  <div class="container" id="post_<%= post.id %>">
+    <% if controller_name == "home" && action_name == "index" %>
+      <h3 class="container">Title: <%= post.title%></h3>
+    <% end %>
+    
+    <% unless controller_name == "home" && action_name == "index" %>
+      <h3 class="container">Title: <%= link_to post.title, post, data: { turbo_frame: "_top" }%></h3>
+    <% end %>
+    <div class="container">
+      <p>Detail: <%= post.body %></p>
+      <p>Comments: <%= post.comments.count %></p>
+      <%= link_to "Show this post", post, data: { turbo_frame: "_top" } %>
+
+    </div>
   </div>
 </turbo-frame>

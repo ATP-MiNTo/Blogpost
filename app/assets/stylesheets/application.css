@@ -13,7 +13,108 @@
  *= require_tree .
  *= require_self
  */
+/* app/assets/stylesheets/custom.css */
 
-.loginbutton {
-    color: black;
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa; /* Light pastel background */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    color: #5a99d4; /* Blue pastel */
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 5px;
+}
+
+.btn-primary {
+    background-color: #add8e6; /* Blue pastel */
+    color: #fff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #89c4e6;
+}
+
+.btn-secondary {
+    background-color: #d3d3d3; /* Neutral pastel */
+    color: #333;
+}
+
+.btn-secondary:hover {
+    background-color: #bbbbbb;
+}
+
+.btn-success {
+    background-color: #a3d9a5; /* Pastel green */
+    color: #fff;
+}
+
+.btn-success:hover {
+    background-color: #8bc58c;
+}
+
+/* Forms */
+.field label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.field input, .field textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.actions input {
+    background-color: #5a99d4;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.actions input:hover {
+    background-color: #4887c2;
+}
+
+/* Links */
+a {
+    color: #5a99d4;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Turbo Frames */
+turbo-frame {
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #eaf4fc; /* Very light blue pastel */
+}
+
+/* Containers */
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
 }
