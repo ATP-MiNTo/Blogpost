@@ -1,4 +1,4 @@
-<!DOCTYPE html><html aria-busy="true" data-turbo-visit-direction="forward"><head><style type="text/css">.turbo-progress-bar {
+<!DOCTYPE html><html><head><style type="text/css">.turbo-progress-bar {
   position: fixed;
   display: block;
   top: 0;
@@ -16,7 +16,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="csrf-param" content="authenticity_token">
-<meta name="csrf-token" content="pLkBj6FKpufrGC7sd9GtrCi_vM1kMTx8no-h2IxrppjwXpqIqiuYMTVjJkYYfoC59g5HoVtbvUa_qkGYM6vKUA">
+
     
 
     
@@ -45,7 +45,7 @@
 <link rel="modulepreload" href="/assets/controllers/hello_controller-549135e8e7c683a538c3d6d517339ba470fcfb79d62f738a0a089ba41851a554.js">
 <link rel="modulepreload" href="/assets/controllers/index-31a9bee606cbc5cdb1593881f388bbf4c345bf693ea24e124f84b6d5c98ab648.js">
 <script type="module">import "application"</script>
-  </head>
+  <meta name="csrf-token" content="HNDqKHpyFMgpf-Q3ivV-KMcmIJvsWxlkNm8fXZKvqZVjmNC8zC3luaL__3T999ARqE55aCHyQ3vENX9MybNADQ"></head>
 
   <body>
     <div class="container">
@@ -53,20 +53,40 @@
       <p class="alert"></p>
       <script src="/assets/application-37f365cbecf1fa2810a8303f4b6571676fa1f9c56c248528bc14ddb857531b95.js" data-turbo-track="reload"></script>
       <link rel="stylesheet" href="/assets/application-3d20e710ce92b545d0a7c989aba8e910364dcdec9cd8da9175e4ff736d649007.css" data-turbo-track="reload">
-      <!-- BEGIN app/views/home/authen.html.erb --><h1>Welcome to the Authenticated Page!</h1>
-<h1>Posts</h1>
+      <!-- BEGIN app/views/devise/registrations/new.html.erb --><h2>Sign up</h2>
 
-<turbo-frame id="posts">
-  <!-- BEGIN app/views/posts/_posts_list.html.erb --><div class="container">
-<turbo-frame id="posts">
-</turbo-frame>
+<form class="new_user" id="new_user" action="/users" accept-charset="UTF-8" method="post" aria-busy="true"><input type="hidden" name="authenticity_token" value="6AMFpem0p_sYLJR1mZLJyByZnaZ39tHJzNAe_p0UJkWWcQeixvVhABtx-x6dqWOOqAaum3K6SB-9NLzsgtPeEA" autocomplete="off">
+  <!-- BEGIN app/views/devise/shared/_error_messages.html.erb --><!-- END app/views/devise/shared/_error_messages.html.erb -->
 
-</div><!-- END app/views/posts/_posts_list.html.erb -->
-</turbo-frame>
+  <div class="field">
+    <label for="user_email">Email</label><br>
+    <input autofocus="autofocus" autocomplete="email" type="email" value="" name="user[email]" id="user_email">
+  </div>
 
-<a class="btn btn-primary" href="/posts/new">Create a New Post</a>
-<a class="btn btn-secondary" href="/home/authen">Back to Home</a>
-<a class="btn btn-secondary" href="/">Log out</a><!-- END app/views/home/authen.html.erb -->
+  <div class="field">
+    <label for="user_password">Password</label>
+    <em>(6 characters minimum)</em>
+    <br>
+    <input autocomplete="new-password" type="password" name="user[password]" id="user_password">
+  </div>
+
+  <div class="field">
+    <label for="user_password_confirmation">Password confirmation</label><br>
+    <input autocomplete="new-password" type="password" name="user[password_confirmation]" id="user_password_confirmation">
+  </div>
+
+  <div class="actions">
+    <input type="submit" name="commit" value="Sign up" data-disable-with="Sign up" disabled="">
+  </div>
+</form>
+<!-- BEGIN app/views/devise/shared/_links.html.erb -->  <a href="/users/sign_in">Log in</a><br>
+
+
+
+
+
+<!-- END app/views/devise/shared/_links.html.erb -->
+<!-- END app/views/devise/registrations/new.html.erb -->
     </div>
   
 

@@ -5,4 +5,5 @@ module.exports = defineConfig({
   use: {
     headless: true, // Run in headless mode by default
   },
+  reporter: [['html', { outputFolder: 'playwright-report' }]],
 });

@@ -1,4 +1,4 @@
-<!DOCTYPE html><html aria-busy="true" data-turbo-visit-direction="forward"><head><style type="text/css">.turbo-progress-bar {
+<!DOCTYPE html><html><head><style type="text/css">.turbo-progress-bar {
   position: fixed;
   display: block;
   top: 0;
@@ -12,11 +12,11 @@
   transform: translate3d(0, 0, 0);
 }
 </style>
-    <title>Blog</title>
+    
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="csrf-param" content="authenticity_token">
-<meta name="csrf-token" content="pLkBj6FKpufrGC7sd9GtrCi_vM1kMTx8no-h2IxrppjwXpqIqiuYMTVjJkYYfoC59g5HoVtbvUa_qkGYM6vKUA">
+
     
 
     
@@ -45,7 +45,7 @@
 <link rel="modulepreload" href="/assets/controllers/hello_controller-549135e8e7c683a538c3d6d517339ba470fcfb79d62f738a0a089ba41851a554.js">
 <link rel="modulepreload" href="/assets/controllers/index-31a9bee606cbc5cdb1593881f388bbf4c345bf693ea24e124f84b6d5c98ab648.js">
 <script type="module">import "application"</script>
-  </head>
+  <title>Blog</title><meta name="csrf-token" content="pXiDpJEonu5mMKzQmkzxF5khfxSJvRNCR_l5nJ6D3Xd_Etc7z05E0ISAFSHJEUgCQ0b2wwJSSFTQlGfczS9Y0g"></head>
 
   <body>
     <div class="container">
@@ -53,21 +53,55 @@
       <p class="alert"></p>
       <script src="/assets/application-37f365cbecf1fa2810a8303f4b6571676fa1f9c56c248528bc14ddb857531b95.js" data-turbo-track="reload"></script>
       <link rel="stylesheet" href="/assets/application-3d20e710ce92b545d0a7c989aba8e910364dcdec9cd8da9175e4ff736d649007.css" data-turbo-track="reload">
-      <!-- BEGIN app/views/home/authen.html.erb --><h1>Welcome to the Authenticated Page!</h1>
-<h1>Posts</h1>
-
-<turbo-frame id="posts">
-  <!-- BEGIN app/views/posts/_posts_list.html.erb --><div class="container">
-<turbo-frame id="posts">
+      <!-- BEGIN app/views/posts/show.html.erb --><!-- BEGIN app/views/posts/_post.html.erb --><!-- BEGIN app/views/posts/_post.html.erb --><turbo-frame id="post_42" class="container">
+  <div>
+    <h3 class="container">
+      Title: 
+        <a data-turbo-frame="_top" href="/posts/42">Tleti</a>
+    </h3>
+    <div class="container">
+      <p>Detail: momomo</p>
+      <p>Comments: 0</p>
+    </div>
+  </div>
 </turbo-frame>
+<!-- END app/views/posts/_post.html.erb -->
+<!-- END app/views/posts/_post.html.erb -->
 
-</div><!-- END app/views/posts/_posts_list.html.erb -->
+<div class="container">
+  <a class="btn btn-primary" href="/posts/42/edit">Edit this post</a> |
+  <a class="btn btn-secondary" href="/home/authen">Back to Home</a>
+</div>
+
+<div class="container">
+<turbo-frame id="post_likes_42">
+<h3>Likes: 0</h3>
+<form class="button_to" method="post" action="/posts/42/like"><button data-turbo="true" class="btn btn-sm btn-success" type="submit">Like</button><input type="hidden" name="authenticity_token" value="OEMcRgt3OOqevExglzOlVnw4-Qu0qoPfIMgtu4e-LfXkPv_zF2WUrHSjSoL1M3ciAPqFRLLmDzsHbYBcKsyfsw" autocomplete="off"></form>
 </turbo-frame>
+</div>
 
-<a class="btn btn-primary" href="/posts/new">Create a New Post</a>
-<a class="btn btn-secondary" href="/home/authen">Back to Home</a>
-<a class="btn btn-secondary" href="/">Log out</a><!-- END app/views/home/authen.html.erb -->
+<div class="container">
+<h3>Comments</h3>
+</div>
+
+
+<div class="container">
+<h4>Add a Comment</h4>
+<form action="/posts/42/comments" accept-charset="UTF-8" method="post" aria-busy="true"><input type="hidden" name="authenticity_token" value="KfCXMfWET-s79NFSrN0G2ELkD6yke9CvC1YWq54BVOOgk33xXQ79lLqSQlBDwqaXxVumJucUHlK-Mm4T59dFhA" autocomplete="off">
+  <div>
+  <label for="comment_content">Comment</label><br>
+  <textarea rows="2" name="comment[content]" id="comment_content"></textarea>
+</div>
+<div>
+<input type="submit" name="commit" value="Create Comment" class="btn btn-primary" data-disable-with="Create Comment" disabled="">
+</div>
+</form></div>
+
+<div class="container">
+  <form class="button_to" method="post" action="/posts/42"><input type="hidden" name="_method" value="delete" autocomplete="off"><button data-confirm="Are you sure?" class="btn btn-secondary" type="submit">Destroy this post</button><input type="hidden" name="authenticity_token" value="nlUaPZilpscfd-oJ-OJPuPqFQm-Ym58RDhTbZ3YZm4Mgx5of2o0YoTe5jZf4H1KfhdsYuNfOBKQOKF4zRjncGQ" autocomplete="off"></form>
+</div><!-- END app/views/posts/show.html.erb -->
     </div>
   
 
-</body></html>
+</body>
+</html>
